@@ -1,0 +1,46 @@
+<section>
+  <div class="main-content">
+    <span>logo</span>
+    <h2>Micropigmentação Natural e Estética</h2>
+    <span>Especialista em Micropigmentação e Estética</span>
+    <p>Transformando autoestima com técnicas precisas e resultados naturais.</p>
+    <button class="btn-wpp" (click)="openWppWeb()">
+      <fa-icon [icon]="faWppWeb"></fa-icon> Agende seu horário
+    </button>
+  </div>
+  <div class="image"></div>
+</section>
+<h1>SERVIÇOS</h1>
+<section class="services">
+  @for (service of services; track service.id) {
+  <app-card-service
+    [image]="service.image"
+    [title]="service.title"
+    [description]="service.description"
+  ></app-card-service>
+  }
+</section>
+<section class="about">
+  <img src="assets/images/andrea.jpg" alt="" />
+  <div class="about-content">
+    <p>
+      <strong>Andréa Raposo</strong> é esteticista e especialista em micropigmentação, dedicada à
+      arte de realçar a beleza de forma autêntica e delicada. Com um olhar apurado para a
+      <strong>micropigmentação labial</strong> e facial, Andréa busca muito além da estética: seu
+      foco central é proporcionar resultados <strong>extremamente naturais</strong>, que respeitam
+      as características únicas de cada cliente.
+    </p>
+
+    <p>
+      Através de técnicas modernas como o <strong>Lash Lifting</strong> e a
+      <strong>Drenagem Linfática</strong>, Andréa transforma o cuidado estético em um momento de
+      bem-estar e sofisticação. Seu trabalho é guiado pela premissa de que a beleza real não
+      transforma, mas sim revela o que cada pessoa tem de melhor.
+    </p>
+
+    <p class="highlight">
+      Cada atendimento é uma experiência personalizada, um espaço de cuidado e equilíbrio onde a
+      técnica se encontra com a suavidade, restituindo a autoconfiança e a plenitude.
+    </p>
+  </div>
+</section>

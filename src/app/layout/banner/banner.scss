@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5em;
+  box-sizing: border-box;
+
+  margin-top: auto;
+
+  background-color: #303030;
+  color: #fff;
+  padding: 4em;
+
+  .pin, .phone {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+
+    fa-icon {
+      font-size: 20px;
+    }
+  }
+}
