@@ -1,21 +1,35 @@
 :host {
-  border: 1px solid #ccc;
+  border: 1.5px solid #d8c6a3;
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 10px rgb(216 198 163 / 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: .8em;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-radius: 20px;
-  max-width: 250px;
+  justify-content: flex-start;
   min-height: 300px;
+  max-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 
-  h2 {
-    color: rgb(223, 165, 95);
+  &:hover {
+    box-shadow: 0 8px 20px rgb(216 198 163 / 0.35);
+    transform: translateY(-6px);
   }
 
   img {
     width: 40px;
     height: 40px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+  }
+
+  h2 {
+    margin: 0 0 0.5rem 0;
+    color: rgb(223, 165, 95);
+    font-size: 1.3rem;
   }
 
   p {

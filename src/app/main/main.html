@@ -1,7 +1,7 @@
 <section>
   <div class="main-content">
     <span>logo</span>
-    <h2>Micropigmentação Natural e Estética</h2>
+    <h1>Micropigmentação Natural e Estética</h1>
     <span>Especialista em Micropigmentação e Estética</span>
     <p>Transformando autoestima com técnicas precisas e resultados naturais.</p>
     <button class="btn-wpp" (click)="openWppWeb()">
@@ -12,13 +12,22 @@
 </section>
 <h1>SERVIÇOS</h1>
 <section class="services">
-  @for (service of services; track service.id) {
-  <app-card-service
-    [image]="service.image"
-    [title]="service.title"
-    [description]="service.description"
-  ></app-card-service>
-  }
+  <p-carousel
+    [value]="services"
+    [numVisible]="3"
+    [numScroll]="1"
+    [circular]="true"
+    autoplayInterval="2000"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template pTemplate="item" let-service>
+      <app-card-service
+        [image]="service.image"
+        [title]="service.title"
+        [description]="service.description"
+      ></app-card-service>
+    </ng-template>
+  </p-carousel>
 </section>
 <section class="about">
   <img src="assets/images/andrea.jpg" alt="" />
