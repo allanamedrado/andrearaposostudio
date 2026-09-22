@@ -1,0 +1,26 @@
+<div class="carousel">
+  <button class="nav left" (click)="prev()"><fa-icon [icon]="icons.faAngleLeft"></fa-icon></button>
+
+  <div class="viewport" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    <div class="track" [style.transform]="translateX">
+      @for (item of items(); track $index) {
+        <div
+          class="slide"
+          [class.center]="isCenterSlide($index)"
+          [class.side]="isSideSlide($index)"
+        >
+          <app-card-service
+            class="card-wrapper"
+            [title]="item.title"
+            [description]="item.description"
+            [image]="item.image"
+          />
+        </div>
+      }
+    </div>
+  </div>
+
+  <button class="nav right" (click)="next()">
+    <fa-icon [icon]="icons.faAngleRight"></fa-icon>
+  </button>
+</div>

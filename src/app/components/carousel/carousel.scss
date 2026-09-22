@@ -1,0 +1,84 @@
+:host {
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.45rem, 2vw, 0.75rem);
+
+    button {
+      background-color: transparent;
+      border-radius: 50%;
+      width: clamp(32px, 7vw, 44px);
+      height: clamp(32px, 7vw, 44px);
+      display: grid;
+      place-items: center;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      border: none;
+      color: #d59999;
+      cursor: pointer;
+    }
+  }
+
+  .viewport {
+    width: 100%;
+    max-width: 920px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    touch-action: pan-y;
+  }
+
+  .track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* DOTS */
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.75rem;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: #333;
+  }
+
+  .slide {
+    position: relative;
+  }
+
+  .slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  }
+}
+
+@media (max-width: 767px) {
+  :host {
+    .carousel button {
+      opacity: 0.45;
+    }
+  }
+}

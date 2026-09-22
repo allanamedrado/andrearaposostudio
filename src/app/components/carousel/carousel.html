@@ -1,0 +1,32 @@
+<div class="carousel">
+  <button (click)="prevSlide()">
+    <fa-icon [icon]="icons.faAngleLeft"></fa-icon>
+  </button>
+
+  <div class="viewport" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    <div
+      class="track"
+      [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'"
+    >
+      @for (item of images(); track $index) {
+        <div class="slide">
+          <img [src]="item.src" [alt]="item.alt" />
+        </div>
+      }
+    </div>
+  </div>
+
+  <button (click)="nextSlide()">
+    <fa-icon [icon]="icons.faAngleRight"></fa-icon>
+  </button>
+</div>
+
+<div class="dots">
+  @for (item of images(); track $index) {
+    <span
+      class="dot"
+      [class.active]="$index === currentIndex()"
+      (click)="goToSlide($index)"
+    ></span>
+  }
+</div>

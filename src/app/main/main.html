@@ -10,24 +10,16 @@
   </div>
   <div class="image"></div>
 </section>
+<section class="welcome">
+  <h2>Bem-vinda à sua <span class="desenhada">jornada</span> de amor e autoestima.</h2>
+  <p>Cada atendimento é único, pensado com cuidado, conforto e respeito a cada história.</p>
+</section>
+<section>
+  <app-carousel [images]="servicesImages"></app-carousel>
+</section>
 <h1>SERVIÇOS</h1>
 <section class="services">
-  <p-carousel
-    [value]="services"
-    [numVisible]="3"
-    [numScroll]="1"
-    [circular]="true"
-    autoplayInterval="2000"
-    [responsiveOptions]="responsiveOptions"
-  >
-    <ng-template pTemplate="item" let-service>
-      <app-card-service
-        [image]="service.image"
-        [title]="service.title"
-        [description]="service.description"
-      ></app-card-service>
-    </ng-template>
-  </p-carousel>
+  <app-carousel-card [items]="services"></app-carousel-card>
 </section>
 <section class="about">
   <img src="assets/images/andrea.jpg" alt="" />

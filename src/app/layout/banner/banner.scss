@@ -1,25 +1,85 @@
 :host {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5em;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  align-items: start;
+  justify-items: center;
+  gap: clamp(1rem, 3vw, 2.2rem);
   box-sizing: border-box;
   width: 100%;
-  flex-wrap: wrap;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 
   margin-top: auto;
 
   background-color: #303030;
   color: #fff;
-  padding: 4em;
+  padding: clamp(1.25rem, 5vw, 4rem);
 
-  .pin, .phone {
+  section {
+    width: 100%;
+  }
+
+  .about {
+    span {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      margin: var(--space-xs) 0 0;
+      font-size: clamp(0.94rem, 0.9vw, 1.02rem);
+      line-height: 1.65;
+    }
+  }
+
+  .map-frame {
+    width: 100%;
+    min-height: clamp(220px, 42vw, 260px);
+    border: 0;
+    border-radius: 14px;
+  }
+
+  .contact h4 {
+    margin: 0 0 var(--space-sm);
+    font-size: clamp(1.1rem, 2.8vw, 1.25rem);
+  }
+
+  .pin,
+  .phone {
     display: flex;
-    align-items: center;
-    gap: .5em;
+    align-items: flex-start;
+    gap: 0.55em;
+
+    p {
+      margin: 0;
+      font-size: clamp(0.92rem, 0.8vw, 1rem);
+      line-height: 1.55;
+    }
 
     fa-icon {
       font-size: 20px;
+      margin-top: 0.15em;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  :host {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  :host {
+    grid-template-columns: 1fr;
+
+    .about {
+      text-align: center;
+    }
+
+    .map {
+      order: 3;
     }
   }
 }

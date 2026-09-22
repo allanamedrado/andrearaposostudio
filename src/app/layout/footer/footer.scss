@@ -3,14 +3,16 @@
     width: 100%;
 
     background-color: bisque;
-    height: 40px;
+    min-height: 44px;
+    padding: 0.45rem 1rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    span {
-      font-size: 14px;
+    h6 {
+      margin: 0;
+      font-size: clamp(0.8rem, 2.8vw, 0.9rem);
       color: #333;
     }
   }
