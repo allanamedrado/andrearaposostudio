@@ -40,27 +40,22 @@ img {
   flex: 0 0 33.3333%;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
   transition: all 0.4s ease;
 }
 
 .track {
   display: flex;
-  gap: 1em;
   transition: transform 0.4s ease;
 }
 
 .slide.center {
-  transform: scale(1.05);
   z-index: 2;
 }
 
 .slide.side {
-  transform: scale(0.9);
-  opacity: 0.7;
-}
-
-.slide.center .card-wrapper {
-  transform: scale(1.08);
+  opacity: 0.85;
 }
 
 .nav {
